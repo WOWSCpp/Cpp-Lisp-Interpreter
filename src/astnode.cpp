@@ -58,7 +58,7 @@ namespace INTERPRETER {
 						
 						int raw_code = n->child_nodes[0]->code;
 						if (EnviromentHelper::is_overload(raw_code)) {
-							cout << "Function Overloading." << endl;
+							cout << "Call overloaded function." << endl;
 							int params_size = n->child_nodes.size() - 1;
 							string func_name = n->child_nodes[0]->string_value;
 							string overload_func_name = func_name + to_string(params_size);

@@ -2,6 +2,11 @@
 #include "../include/astnode.h"
 
 namespace INTERPRETER {
+
+	static map<string, int> symbol_code;
+	static vector<string> symbol_name;
+	static unordered_map<int, unordered_set<int>> overload_map;
+
 	shared_ptr<ASTNode> Environment::get_node_by_code(int code) {
 		
 		auto found = env.find(code);
@@ -41,10 +46,6 @@ namespace INTERPRETER {
 	}
 
 
-	static map<string, int> symbol_code;
-	static vector<string> symbol_name;
-	static unordered_map<int, unordered_set<int>> overload_map;
-
 	int EnviromentHelper::find_first_overload_func(int code) {
 		for (auto p : overload_map) {
 			if (p.second.find(code) != p.second.end()) {
@@ -59,6 +60,10 @@ namespace INTERPRETER {
 
 	void EnviromentHelper::update_overload_map(int code, int overload_code) {
 		overload_map[code].emplace(overload_code);
+		int idx = overload_map[code].size() - 1;
+		if (idx > 0) {
+			cout << "Overloaded function + " << to_string(idx) << "." << endl;
+		}
 	}
 
 	bool EnviromentHelper::is_overload(int code) {
