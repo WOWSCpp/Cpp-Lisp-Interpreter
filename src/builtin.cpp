@@ -293,10 +293,9 @@ namespace INTERPRETER {
 		shared_ptr<ASTNode> func = input_tokens[0];
 		shared_ptr<ASTNode> init = input_tokens[1];
 		shared_ptr<ASTNode> list = input_tokens[2];
-		shared_ptr<ASTNode> acc = list->child_nodes[0];
-		acc->int_value += init->convert_to_int();
+		shared_ptr<ASTNode> acc = init;
 		vector<shared_ptr<ASTNode>> new_tokens(2);
-		for (int i = 1; i < list->child_nodes.size(); ++i) {
+		for (int i = 0; i < list->child_nodes.size(); ++i) {
 			new_tokens[0] = acc;
 			new_tokens[1] = list->child_nodes[i];
 			acc = ASTNode::apply(func, new_tokens, env);
