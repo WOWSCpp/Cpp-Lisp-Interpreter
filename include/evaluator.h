@@ -5,13 +5,13 @@
 #include "environment.h"
 
 namespace INTERPRETER {
-	class EvaluatorException : public exception{
-	public:
-		EvaluatorException(const string& message) :
-			exception(message.c_str()) {
-			cerr << message.c_str() << endl;
-		}
-	};
+	// class EvaluatorException : public exception{
+	// public:
+	// 	EvaluatorException(const string& message) :
+	// 		exception(message.c_str()) {
+	// 		cerr << message.c_str() << endl;
+	// 	}
+	// };
 
 	class Evaluator {
 	private:

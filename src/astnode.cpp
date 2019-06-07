@@ -58,7 +58,7 @@ namespace INTERPRETER {
 						
 						int raw_code = n->child_nodes[0]->code;
 						if (EnviromentHelper::is_overload(raw_code)) {
-							cout << "Call overloaded function." << endl;
+							// cout << "Call overloaded function." << endl;
 							int params_size = n->child_nodes.size() - 1;
 							string func_name = n->child_nodes[0]->string_value;
 							string overload_func_name = func_name + to_string(params_size);
@@ -138,11 +138,11 @@ namespace INTERPRETER {
 				res = to_string(int_value); 
 				break;
 			case ASTNode::BUILTIN:
-				sprintf_s(buf, "#<builtin:%p>", builtin_value);
+				sprintf(buf, "#<builtin:%p>", builtin_value);
 				res = buf; 
 				break;
 			case ASTNode::SPECIAL:
-				sprintf_s(buf, "#<builtin:%p>", builtin_value);
+				sprintf(buf, "#<builtin:%p>", builtin_value);
 				res = buf; 
 				break;
 			case ASTNode::BOOL:

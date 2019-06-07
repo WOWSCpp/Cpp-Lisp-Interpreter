@@ -5,14 +5,14 @@
 #include "token.h"
 
 namespace INTERPRETER {
-	class ParserException : public exception {
-	private:
-		int pos;
-	public:
-		ParserException(const string& message, int pos) :
-			exception(message.c_str()),
-			pos(pos) {}
-	};
+	// class ParserException : public exception {
+	// private:
+	// 	int pos;
+	// public:
+	// 	ParserException(const string& message, int pos) :
+	// 		exception(message.c_str()),
+	// 		pos(pos) {}
+	// };
 
 	class Parser {
 	private:

@@ -216,27 +216,27 @@ namespace INTERPRETER {
 
 	shared_ptr<ASTNode> function_head(vector<shared_ptr<ASTNode>> & input_tokens, shared_ptr<Environment> & env) { // (head LIST)
 		auto& v = input_tokens[0]->child_nodes;
-		if (v.empty()) {
-			new EvaluatorException("fatal error: try to access into empty list");
-		}
+		// if (v.empty()) {
+		// 	new EvaluatorException("fatal error: try to access into empty list");
+		// }
 		shared_ptr<ASTNode> head = v.front();
 		return head;
 	}
 
 	shared_ptr<ASTNode> function_tail(vector<shared_ptr<ASTNode>>& input_tokens, shared_ptr<Environment>& env) { // (tail LIST)
 		auto& v = input_tokens[0]->child_nodes;
-		if (v.empty()) {
-			new EvaluatorException("fatal error: try to access into empty list");
-		}
+		// if (v.empty()) {
+		// 	new EvaluatorException("fatal error: try to access into empty list");
+		// }
 		shared_ptr<ASTNode> tail = v.back();
 		return tail;
 	}
 
 	shared_ptr<ASTNode> function_rm_head(vector<shared_ptr<ASTNode>>& input_tokens, shared_ptr<Environment>& env) { // (rm_head LIST)
 		auto& v = input_tokens[0]->child_nodes;
-		if (v.empty()) {
-			new EvaluatorException("fatal error: try to access into empty list");
-		}
+		// if (v.empty()) {
+		// 	new EvaluatorException("fatal error: try to access into empty list");
+		// }
 		shared_ptr<ASTNode> head = v.front();
 		v.erase(v.begin());
 		return head;
@@ -244,9 +244,9 @@ namespace INTERPRETER {
 
 	shared_ptr<ASTNode> function_rm_tail(vector<shared_ptr<ASTNode>>& input_tokens, shared_ptr<Environment>& env) { // (rm_tail LIST)
 		auto& v = input_tokens[0]->child_nodes;
-		if (v.empty()) {
-			new EvaluatorException("fatal error: try to access into empty list");
-		}
+		// if (v.empty()) {
+		// 	new EvaluatorException("fatal error: try to access into empty list");
+		// }
 		shared_ptr<ASTNode> tail = v.back();
 		v.pop_back();
 		return tail;
@@ -258,7 +258,7 @@ namespace INTERPRETER {
 		if (index < elements.size()) {
 			return elements[index];
 		}
-		new EvaluatorException("fatal error: vector subscript out of range");
+		//new EvaluatorException("fatal error: vector subscript out of range");
 		return make_shared<ASTNode>(new ASTNode());
 	}
 

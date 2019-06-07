@@ -61,9 +61,9 @@ namespace INTERPRETER {
 	void EnviromentHelper::update_overload_map(int code, int overload_code) {
 		overload_map[code].emplace(overload_code);
 		int idx = overload_map[code].size() - 1;
-		if (idx > 0) {
-			cout << "Overloaded function + " << to_string(idx) << "." << endl;
-		}
+		// if (idx > 0) {
+		// 	cout << "Overloaded function + " << to_string(idx) << "." << endl;
+		// }
 	}
 
 	bool EnviromentHelper::is_overload(int code) {

@@ -69,10 +69,10 @@ namespace INTERPRETER {
 			}
 		}
 		add_token();
-		cout << "tokens are :  " ;
-		for (auto t : tokens)
-			cout << t << " ";
-		cout << endl;
+		// cout << "tokens are :  " ;
+		// for (auto t : tokens)
+		// 	cout << t << " ";
+		// cout << endl;
 		return tokens;
 	}
 }
