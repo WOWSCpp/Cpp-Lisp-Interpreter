@@ -61,7 +61,7 @@
 
 
 ####  Function and Higher Order Function
-Example for filter funtion.
+Example of the filter function.
 
 ```Lisp
 (def a (list 1 2 3 4))
@@ -76,7 +76,7 @@ Example for filter funtion.
 ```
 ![result of filter](https://github.com/WOWSCpp/Cpp-Lisp-Interpreter/blob/v1.01/imgs/filter_res.png)
 
-Example for foldl funtion.
+Example of foldl function.
 
 ```Lisp
 (def a (list 1 2 3 4))
@@ -89,7 +89,7 @@ You can also implement your own logic for map, foldl and filter function.
 
 ####  Function Overloading
 
-Example for sum function overloading.
+Example of sum function overloading.
 
 ```Lisp
 (function add (a b) (+ a b))
@@ -103,4 +103,3 @@ Example for sum function overloading.
   g++ main.cpp astnode.cpp builtin.cpp environment.cpp evaluator.cpp utils.cpp -I ../include -o main
  
 * For windows, you can simply add the files into your project and then compile & run your project.
-
