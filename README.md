@@ -98,7 +98,7 @@ Example for sum function overloading.
 ![result of filter](https://github.com/WOWSCpp/Cpp-Lisp-Interpreter/blob/v1.01/imgs/over_res.png)
 
 
-## Compile: 
+## Compilation: 
 * For linux, first cd in /src, then use this command:
   g++ main.cpp astnode.cpp builtin.cpp environment.cpp evaluator.cpp utils.cpp -I ../include -o main
  
