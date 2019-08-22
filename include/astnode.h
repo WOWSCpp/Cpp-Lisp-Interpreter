@@ -16,6 +16,7 @@ namespace INTERPRETER {
 		enum ASTNodeType {
 			NIL,
 			INT,
+			DOUBLE,
 			BOOL,
 			STRING,
 			SYMBOL,
@@ -28,6 +29,7 @@ namespace INTERPRETER {
 		// constructors
 		ASTNode();
 		ASTNode(int i);
+		ASTNode(double d);
 		ASTNode(bool b);
 		ASTNode(builtin b);
 		ASTNode(const string& s);
@@ -49,6 +51,7 @@ namespace INTERPRETER {
 
 		// member functions
         int convert_to_int(); // convert to int
+		double convert_to_double();
         string convert_to_string(); // convert to string
 		
 
