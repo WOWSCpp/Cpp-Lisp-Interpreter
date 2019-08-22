@@ -42,6 +42,7 @@ namespace INTERPRETER {
 		int code; // code for SYMBOL
 
 		Int<int>::value_type int_value;
+		double double_value;
         bool bool_value;		
 		builtin builtin_value;
         string string_value;

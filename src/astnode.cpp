@@ -18,6 +18,7 @@ namespace INTERPRETER {
 	/*constructor begin*/
 	ASTNode::ASTNode() : type(NIL) {}
 	ASTNode::ASTNode(int i) : type(INT), int_value(i) {}
+	ASTNode::ASTNode(double d) : type(DOUBLE), double_value(d) {}
 	ASTNode::ASTNode(bool b) : type(BOOL), bool_value(b) {}
 	ASTNode::ASTNode(builtin b) : type(BUILTIN), builtin_value(b) {}
 	ASTNode::ASTNode(const string& s) : type(STRING), string_value(s) {}
