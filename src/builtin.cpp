@@ -111,6 +111,13 @@ namespace INTERPRETER {
 			}
 			return ASTNode::create_normal_node(res);
 		}
+		else if (first->type == ASTNode::DOUBLE) {
+			double res = first->convert_to_double();
+			for (auto i = input_tokens.begin() + 1; i != input_tokens.end(); ++i) {
+				res += (*i)->convert_to_double();
+			}
+			return ASTNode::create_normal_node(res);
+		}
 	}
 
 	shared_ptr<ASTNode> builtin_minus(vector<shared_ptr<ASTNode>>& input_tokens, shared_ptr<Environment>& env) { // (- X ..)

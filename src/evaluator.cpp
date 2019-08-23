@@ -14,6 +14,9 @@ namespace INTERPRETER {
 			Tokenizer t(code);
 			t.tokenize();
 			if (t.unclosed <= 0) { // no unmatched parenthesis nor quotation
+				//for (auto token : t.tokens) {
+				//	cout << token << endl;
+				//}
 				print_code_eval_result(t.tokens);
 				code = "";
 			}
@@ -178,6 +181,9 @@ namespace INTERPRETER {
 		for (auto c : final_node->child_nodes) {
 			if (c->type == ASTNode::INT) {
 				ASTNode::v_list.emplace_back(c->int_value);
+			}
+			else if (c->type == ASTNode::DOUBLE) {
+				ASTNode::v_list.emplace_back(c->double_value);
 			}
 		}
 		return final_node;

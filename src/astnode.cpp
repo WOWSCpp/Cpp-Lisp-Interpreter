@@ -120,6 +120,8 @@ namespace INTERPRETER {
         switch (type) {
 			case ASTNode::INT:
 				return int_value;
+			case ASTNode::DOUBLE:
+				return int_value;
 			case ASTNode::BOOL:
 				return static_cast<int>(bool_value);
 			case ASTNode::STRING:
@@ -129,6 +131,21 @@ namespace INTERPRETER {
         }
     }
 
+	double ASTNode::convert_to_double() {
+		switch (type) {
+		case ASTNode::INT:
+			return double_value;
+		case ASTNode::DOUBLE:
+			return double_value;
+		case ASTNode::BOOL:
+			return static_cast<int>(bool_value);
+		case ASTNode::STRING:
+			return atoi(string_value.c_str());
+		default:
+			return 0;
+		}
+	}
+
     string ASTNode::convert_to_string() {
 		char buf[32];
 		string res;
@@ -137,6 +154,9 @@ namespace INTERPRETER {
 				break;
 			case ASTNode::INT:
 				res = to_string(int_value); 
+				break;
+			case ASTNode::DOUBLE:
+				res = to_string(double_value);
 				break;
 			case ASTNode::BUILTIN:
 				sprintf(buf, "#<builtin:%p>", builtin_value);

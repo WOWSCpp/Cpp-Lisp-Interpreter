@@ -73,7 +73,12 @@ namespace INTERPRETER {
 				break;
 			}
 			else if (isdigit(token[0]) || (token[0] == '-' && token.size() >= 2 && isdigit(token[1]))) { // number
-					child_nodes.emplace_back(ASTNode::create_normal_node(atoi(token.c_str())));
+				ASTNode n;
+				if (token.find(".") != std::string::npos)
+					n = ASTNode(stod(token.c_str()));
+				else
+					n = ASTNode(atoi(token.c_str()));
+				child_nodes.emplace_back(ASTNode::create_normal_node(n));
 			}
 			else { // symbol
 				static_check(token, pos);
